@@ -2,10 +2,26 @@
 // that counts down when it is called (see starter code below).
 
 var countdownGenerator = function (x) {
-    /* your code here */
-  };
-  
-  var countdown = countdownGenerator(3);
+    /* your code here */ 
+    
+    return function (){
+        if (x > 0) {
+            console.log("T-minus " + x + "...");
+        
+        } else if (x == 0) {
+            //console.log("we are in zero");
+            console.log("Blast Off!");
+            
+        } else if (x < 0) {
+            //console.log("we are less than zero");
+            console.log("Rockets already gone, bub!");
+        }
+        x = x - 1;
+    }
+};
+
+var countdown = countdownGenerator(3);
+
   countdown(); // T-minus 3...
   countdown(); // T-minus 2...
   countdown(); // T-minus 1...
